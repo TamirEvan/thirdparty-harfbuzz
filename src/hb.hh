@@ -51,7 +51,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-#if (defined(_MSC_VER) && _MSC_VER >= 1500) || defined(__MINGW32__)
+#if (defined(_MSC_VER) && _MSC_VER >= 1500)
 #include <intrin.h>
 #endif
 
