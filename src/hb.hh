@@ -197,7 +197,12 @@
 
 #ifdef _WIN32
 #include <windows.h>
+#if !defined(__MINGW32__) || defined(__MINGW64_VERSION_MAJOR)
 #include <winapifamily.h>
+#else
+#define WINAPI_PARTITION_DESKTOP 0x1
+#define WINAPI_FAMILY_PARTITION(x) (x == WINAPI_PARTITION_DESKTOP)
+#endif // !defined(__MINGW32__) || defined(__MINGW64_VERSION_MAJOR)
 #endif
 
 #define HB_PASTE1(a,b) a##b
